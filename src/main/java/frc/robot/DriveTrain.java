@@ -21,6 +21,7 @@ public class DriveTrain {
 
     public DriveTrain(ControllerManager cManager) {
         this.cManager = cManager;
+        m_rightMC.setInverted(true);  
     }
 
     public void operatorDrive() {

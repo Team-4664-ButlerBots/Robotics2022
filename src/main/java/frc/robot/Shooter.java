@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.motorcontrol.Victor;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
 
 /**
  * Add your docs here.
@@ -22,9 +23,9 @@ public class Shooter {
     private double collectorSpeed;
 
     // pnematics
-    private Compressor Compressor = new Compressor(0);
-    private DoubleSolenoid StopPiston = new DoubleSolenoid(7, 5);
-    private DoubleSolenoid Brake = new DoubleSolenoid(4, 6);
+    private Compressor Compressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
+    private DoubleSolenoid StopPiston = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 7, 5);
+    private DoubleSolenoid Brake = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 4, 6);
 
     //
     FlyWheels flyWheels = new FlyWheels();
@@ -106,7 +107,7 @@ public class Shooter {
     public void UpdateMotors() {
         flyWheels.Debug();
         flyWheels.updateMotors();
-        ArmMC.setSpeed(ArmSpeed);
+        ArmMC.set(ArmSpeed);
         collector.moveCollector(collectorSpeed);
     }
 }

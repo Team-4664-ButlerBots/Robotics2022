@@ -63,17 +63,17 @@ public class FlyWheels {
 
     private void constantSpeed(){
         TargetSpeed /= 50;
-        LeftShootMC.setSpeed(-TargetSpeed * 1.4);
-        RightShootMC.setSpeed(TargetSpeed);
+        LeftShootMC.set(-TargetSpeed * 1.4);
+        RightShootMC.set(TargetSpeed);
     }
 
     private void encoderTrack() {
         double pMultiplier = 0.5;
         SmartDashboard.putNumber("TargetSpeed", TargetSpeed);
         double leftSpeed = clamp(((TargetSpeed - Lencoder.getRate()) * pMultiplier), 0, 1);
-        LeftShootMC.setSpeed(leftSpeed);
+        LeftShootMC.set(leftSpeed);
         double rightSpeed = clamp(((TargetSpeed - Rencoder.getRate()) * pMultiplier), 0, 1);
-        RightShootMC.setSpeed(rightSpeed);
+        RightShootMC.set(rightSpeed);
     }
 
     private double clamp(double in, double low, double high) {

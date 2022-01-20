@@ -29,13 +29,13 @@ public class BallCollector {
             //check if the balls won't jam
             if(!ballsWillJam()){
                 //if the balls don't jam then proceed with moving the collector forward
-                CollectorMC.setSpeed(speed);
+                CollectorMC.set(speed);
             }else{
                 //otherwise stop the collector
-                CollectorMC.setSpeed(0);
+                CollectorMC.set(0);
             }
         }else{
-            CollectorMC.setSpeed(speed);
+            CollectorMC.set(speed);
         }
         
     }

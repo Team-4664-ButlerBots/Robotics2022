@@ -7,11 +7,10 @@
 
 package frc.robot;
 
-import edu.wpi.first.networktables.EntryListenerFlags;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.networktables.*;
-import edu.wpi.first.wpilibj.controller.*;
 
 /**
  * This class handles the vision data computed on the raspberry pi. It pulls target position data from the
